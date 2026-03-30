@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <meta charset="UTF-8" /> 
+    <title>Used Car Inventory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    /*this refrences to the correct files*/
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    /*this is for the title to be displayed*/
+    <header class="site-header">
+        <div class="container">
+            <h1>Take Home Assignment 1</h1>
+            <p>Find your next used car with flexible filters.</p>
+        </div>
+    </header>
 
+    <main class="container">
+        <section class="filters" aria-label="Car filters">
+            /*filters through inventory*/
+            <h2>Filter inventory</h2>
+            <form id="filter-form">
+                <div class="filter-group">
+                    /*shows min year*/
+                    <label for="min-year">Year (min)</label>
+                    <input type="number" id="min-year" name="minYear" placeholder="e.g. 2015" />
+                </div>
+
+                <div class="filter-group">
+                    /*shows max year*/
+                    <label for="max-year">Year (max)</label>
+                    <input type="number" id="max-year" name="maxYear" placeholder="e.g. 2020" />
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Make</span>
+                    <div class="checkbox-group" id="make-options">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    /*shows max mileage*/
+                    <label for="max-mileage">Max mileage</label>
+                    <input type="number" id="max-mileage" name="maxMileage" placeholder="e.g. 30000" />
+                </div>
+
+                <div class="filter-group">
+                    /*shows min price*/
+                    <label for="min-price">Min price ($)</label>
+                    <input type="number" id="min-price" name="minPrice" placeholder="e.g. 10000" />
+                </div>
+
+                <div class="filter-group">
+                    /*shows max price*/
+                    <label for="max-price">Max price ($)</label>
+                    <input type="number" id="max-price" name="maxPrice" placeholder="e.g. 25000" />
+                </div>
+
+                <div class="filter-group">
+                    /*asks for color options*/
+                    <span class="filter-label">Color</span>
+                    <div class="checkbox-group" id="color-options">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    /*conformation button*/
+                    <button type="submit">Apply filters</button>
+                    <button type="button" id="clear-filters">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="inventory" aria-label="Car listings">
+            /*shows cars available*/
+            <h2>Available cars</h2>
+            <p id="results-message" class="results-message" aria-live="polite"></p>
+            <div id="car-list" class="card-grid">
+                <!-- Cards injected here -->
+            </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <small>&copy; 2026 Oakland Auto Exchange</small>
+        </div>
+    </footer>
+   /*referances correct files using src*/
+   <script src="js/usedCars-TH-1.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>
